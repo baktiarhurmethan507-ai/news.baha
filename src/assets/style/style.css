@@ -1,0 +1,1304 @@
+/* --- ОБЩИЕ НАСТРОЙКИ --- */
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root, .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* Прижимает футер к низу */
+}
+
+/* --- ХЕДЕР (Верхняя панель) --- */
+.top-black-bar {
+  background-color: #2c2c2c;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.burger-menu {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: none; /* Убирает подчеркивание Link */
+}
+
+.burger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.gray-title-bar {
+  background-color: #8c8c8c;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.gray-title-bar h2 {
+  color: white;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+/* --- ГЛАВНАЯ СТРАНИЦА (Сетка новостей) --- */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* --- ДЕТАЛЬНАЯ НОВОСТЬ (PostDetail) --- */
+.post-detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.back-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.detail-category {
+    color: #d63031;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.detail-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.detail-img-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detail-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- СТРАНИЦА КАТЕГОРИЙ (Плитка 2х2) --- */
+.categories-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.orange-header {
+    background-color: #ff9f43; /* Тот самый оранжевый */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 колонки */
+    gap: 15px;
+    padding: 20px;
+}
+
+.cat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cat-icon { font-size: 40px; margin-bottom: 10px; }
+.cat-name { font-size: 14px; font-weight: 500; }
+
+/* --- ФУТЕР --- */
+.site-footer {
+  background-color: #2c2c2c;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.site-footer p {
+  color: #ffffff;
+  margin: 0;
+}
+/* Себет бетінің басты контейнері */
+.cart-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://media.tenor.com/7p_I9D04itkAAAAC/anime-girl-katana.gif');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Шыны эффектісі бар орталық блок */
+.cart-glass-container {
+    background: rgba(255, 255, 255, 0.03); /* Мөлдірлік */
+    backdrop-filter: blur(15px); /* Бұлдырату */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Тақырып стилі */
+.cart-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cart-header h1 {
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px #a855f7;
+}
+
+/* Тауарлар тізімі */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Әр тауардың карточкасы */
+.cart-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.cart-card:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: #a855f7;
+    transform: translateX(10px);
+}
+
+.cart-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cart-card-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.cart-card-info h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+}
+
+.cart-card-info p {
+    color: #a855f7;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* Тауарды өшіру батырмасы */
+.remove-btn {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* Жалпы сомма бөлімі */
+.cart-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    font-size: 24px;
+    color: #fff;
+}
+
+.total-price span {
+    color: #a855f7;
+    font-weight: 800;
+}
+
+/* Сәнді Төлем жасау батырмасы */
+.pay-button {
+    background: linear-gradient(45deg, #a855f7, #6366f1);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+    transition: 0.3s;
+}
+
+.pay-button:hover {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+    transform: scale(1.05);
+}
+/* Себет бетінің негізгі фоны */
+.cart-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('https://media.tenor.com/7p_I9D04itkAAAAC/anime-girl-katana.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* "Менің сақталған жаңалықтарым" тақырыбы */
+.cart-page h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 15px #a855f7; /* Күлгін неон */
+}
+
+/* Егер себет бос болса шығатын мәтін */
+.empty-cart-msg {
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    margin-top: 50px;
+}
+
+/* Сақталған карталардың контейнері */
+.cart-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Әрбір сақталған картаның стилі */
+.cart-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.cart-card:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Карта ішіндегі жазулар */
+.cart-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.cart-card p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Өшіру батырмасы */
+.remove-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+/* Карточканың негізгі стилі */
+.post-card {
+    background: #1a1a1a; /* Күңгірт фон */
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    border-color: #58a6ff; /* Көк неонды жиек */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.post-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Категория тегі */
+.post-category-tag {
+    color: #58a6ff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-title {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.post-description {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Футер бөлімі */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.post-date {
+    color: #6e7681;
+    font-size: 12px;
+}
+
+/* Себетке қосу батырмасы */
+.add-to-cart-btn {
+    padding: 8px 16px;
+    background-color: #238636; /* Жасыл түс */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2ea043;
+}/* --- ЖАЛПЫ БЕТ СТИЛІ (Light Mode) --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Негізгі фон нағыз ақ түс */
+    color: #1a1a1a; /* Барлық негізгі мәтін қою түсті */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- HEADER (Үстіңгі панель) --- */
+.top-black-bar {
+    background: #111111; /* Header-ді қою қалдырамыз, контраст үшін */
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cart-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white; /* Header-дегі себет мәтіні ақ */
+}
+
+/* --- ЖАҢАЛЫҚТАР ПАНЕЛІ ("Все новости") --- */
+.gray-title-bar {
+    background-color: #f7f7f7; /* Өте ашық сұр фон */
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gray-title-bar h2 {
+    margin: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #111111; /* "Все новости" жазуы қою */
+}
+
+/* --- КАТЕГОРИЯ БАТЫРМАЛАРЫ (Таза ақ стиль) --- */
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.category-btn {
+    padding: 10px 24px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    color: #555555;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* Белсенді және hover күйінде күлгін түс (скриншоттағыдай) */
+.category-btn.active, .category-btn:hover {
+    background: #8b5cf6; /* Күлгін неон */
+    color: #ffffff;
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+}
+/* Негізгі орауыш - мазмұнды ортаға қою */
+.light-page-wrapper {
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Контейнерді ортаға қояды */
+}
+
+.detail-container {
+    max-width: 850px; /* Мәтін тым жайылып кетпеуі үшін */
+    width: 100%;
+    text-align: center; /* БҮКІЛ МӘТІНДІ ОРТАҒА КЕЛТІРУ */
+}
+
+/* Назад батырмасын сол жақта қалдыру немесе ортаға қою (таңдауың бойынша) */
+.minimal-back-btn {
+    display: inline-block;
+    margin-bottom: 30px;
+    /* Егер батырма да ортада тұру керек болса, қосымша ештеңе керек емес */
+}
+
+/* Тақырыптар мен мәтін */
+.main-title {
+    font-size: 38px;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.full-text {
+    font-size: 19px;
+    line-height: 1.8;
+    text-align: justify; /* Мәтін ортада болғанымен, жиектері түзу болуы үшін */
+    text-align-last: center; /* Соңғы жол да ортада болады */
+    margin: 30px 0;
+}
+
+/* Суретті ортаға келтіру */
+.image-frame {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.image-frame img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+/* ДЕТАЛЬНАЯ СТРАНИЦА - ТЕКСТ В ЦЕНТРЕ */
+
+.light-detail-page {
+    background-color: #ffffff !important; /* Нағыз ақ фон */
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Блоктарды көлденең ортаға қояды */
+}
+
+.container {
+    max-width: 800px; /* Мәтін тым жайылып кетпеуі үшін шектеу */
+    width: 100%;
+    text-align: center; /* МӘТІНДІ ДӘЛ ОРТАҒА КЕЛТІРУ */
+}
+
+/* Назад батырмасы */
+.white-back-btn {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 6px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    display: inline-block; /* Ортада тұруы үшін */
+}
+
+/* Жаңалықтың негізгі мазмұны */
+.post-detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ішіндегі элементтерді (сурет, т.б.) ортаға қояды */
+}
+
+.detail-category {
+    color: #e74c3c;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.detail-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.detail-date {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* Сурет блогын ортаға келтіру */
+.detail-img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.detail-img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Негізгі сипаттама мәтіні */
+.detail-description {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #333;
+    /* Мәтін ортада болса да, оқуға ыңғайлы болуы үшін */
+    text-align: center; 
+    margin: 20px 0;
+}
+
+.detail-source {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    width: 100%;
+    color: #999;
+}
+/* Элементтерді шетке жаймай, сол жаққа жинау */
+.header-left-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Бургер мен себет арасындағы қашықтық */
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Себетті айтарлықтай үлкейту */
+.cart-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 26px; /* Иконка көлемі */
+    font-weight: bold;
+}
+
+/* Себеттегі санның стилі */
+.cart-icon-header span {
+    background: #8b5cf6; /* Күлгін түс */
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 18px; /* Санның көлемі */
+    min-width: 25px;
+    text-align: center;
+}
+
+/* Бургердің көлемі */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+}
+
+.burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    width: 100%;
+}
+/* ДӘЙЕКСӨЗ СТИЛІ */
+.news-quote {
+    font-style: italic;
+    font-size: 20px;
+    color: #444;
+    border-left: 4px solid #ff4d4d; /* Қызыл жиек */
+    padding-left: 20px;
+    margin: 30px 0;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* БӨЛІСУ БАТЫРМАЛАРЫ */
+.share-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.share-btn {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp { background-color: #25D366; color: white; }
+.telegram { background-color: #0088cc; color: white; }
+
+/* ҰҚСАС ЖАҢАЛЫҚТАР */
+.related-section {
+    margin-top: 60px;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.related-section h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.related-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.related-card:hover {
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+/* Header контейнері - екі жаққа созу */
+.header-container-spaced {
+    display: flex;
+    justify-content: space-between; /* Бургер сол жақта, жүрекше оң жақта болады */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Сайттың негізгі еніне сәйкес */
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+}
+
+/* Бургер меню стилі (сол жақта қалады) */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Жүрекше белгішесінің стилі (оң жақ шетке итеру) */
+.fav-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Иконка мен санның арасы */
+    text-decoration: none;
+    color: white;
+    font-size: 24px; /* Иконка көлемі */
+    transition: transform 0.2s ease;
+}
+
+.fav-icon-header:hover {
+    transform: scale(1.1); /* Жанасқанда сәл үлкейеді */
+}
+
+/* Сан тұратын шеңбер */
+.fav-icon-header span {
+    background-color: #8b5cf6; /* Күлгін түс (дизайныңа сай) */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+/* Төменгі бөлімді реттеу */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Жүрекше батырмасы */
+.favorite-btn-card {
+    background-color: #28a745; /* Жасыл түс */
+    color: white;
+    border: none;
+    width: 42px;
+    height: 38px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.favorite-btn-card:hover {
+    background-color: #218838;
+    transform: scale(1.1); /* Жанасқанда сәл үлкейеді */
+}
+
+.favorite-btn-card:active {
+    transform: scale(0.9); /* Басқанда кішірейеді */
+}
+
+/* Датаның стилі (сәл анық болуы үшін) */
+.post-date {
+    font-size: 13px;
+    color: #888;
+}
+.comments-wrapper {
+    margin: 50px 0;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.comments-wrapper h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.comment-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-name {
+    font-weight: bold;
+    color: #e50914;
+    margin-right: 10px;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.comment-text {
+    margin-top: 8px;
+    line-height: 1.5;
+    color: #444;
+}
+/* Бургер батырмасының стилі */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Ашылатын мәзірдің стилі */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Басында жасырын тұрады */
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.mobile-nav.active {
+    left: 0; /* Басқанда экранға шығады */
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Фонды қарайту */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+/* Жалпы контейнер */
+.comments-container {
+    max-width: 600px; /* Ортаға жинау */
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.comments-header {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Форма стильдері */
+.comments-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.comments-input, .comments-textarea {
+    padding: 12px 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.comments-input:focus, .comments-textarea:focus {
+    border-color: #e50914;
+}
+
+.comments-textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+.comments-button {
+    padding: 12px;
+    background: #e50914;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.comments-button:hover {
+    background: #c40811;
+}
+
+/* Пікірлер карточкалары */
+.comment-card {
+    background: #fcfcfc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f0f0f0;
+}
+
+.comment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-user {
+    font-size: 15px;
+    color: #222;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-content {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.no-comments {
+    text-align: center;
+    color: #aaa;
+}
+.top-black-bar {
+    display: flex;
+    justify-content: space-between; /* Это растолкнет левую часть и кнопки по краям */
+    align-items: center;
+    padding: 0 15px;
+    height: 50px; /* Убедись, что высота фиксированная */
+}
+
+.header-right-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.login-link:hover {
+    opacity: 1;
+}
+
+.register-btn-header {
+    background-color: #8b5cf6; /* Твой фиолетовый */
+    color: white;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.register-btn-header:hover {
+    background-color: #7c3aed;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+/* Центрирование всей формы */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Занимает 70% высоты экрана */
+    width: 100%;
+}
+
+/* Стиль темной карточки */
+.auth-form {
+    background-color: #1a1a1a; /* Темный цвет как у карточек новостей */
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.auth-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили инпутов */
+.auth-form input {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    color: white;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #8b5cf6;
+}
+
+/* Твоя фиолетовая кнопка */
+.auth-btn {
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #7c3aed;
+}
+
+.auth-form p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.auth-form p a {
+    color: #8b5cf6;
+    text-decoration: none;
+}
+.profile-card {
+    max-width: 450px;
+}
+
+.avatar-upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 3px solid #8b5cf6;
+    margin-bottom: 15px;
+}
+
+.profile-avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.empty-avatar {
+    font-size: 80px;
+}
+
+.file-label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    width: auto;
+    padding: 10px 20px;
+}
+
+.profile-info {
+    text-align: left;
+    background: #252525;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+/* Контейнер для авторизованного юзера */
+.user-logged-in-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Ссылка на профиль (ФОТО + EMAIL) */
+.header-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none !important; /* Убираем подчеркивание */
+    color: white !important; /* Текст всегда белый */
+}
+
+/* Кружок для фото */
+.header-avatar-mini {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #8b5cf6;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-avatar-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопка выхода */
+.logout-btn-header {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn-header:hover {
+    background: #cc0000;
+}
